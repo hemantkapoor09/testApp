@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="images/a.ico" type="image/x-icon">
+    <title><%= title%> </title>
+    <!-- Bootstrap core CSS -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../../../../packages/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../stylesheets/style.css">
+
+    <!-- Custom styles for this template -->
+    <link href="../../../../../css/scrolling-nav.css" rel="stylesheet">
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../../../../../js/jquery/jquery.min.js"></script>
+    <script src="../../../../../bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="../../../../../js/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="../../../../../js/scrolling-nav.js"></script>
+    <style>
+    .bady{
+      background-color:#888;
+    }
+   .had{
+      font-size:20px !important;
+      font-weight: bold;
+    }
+   .data{
+      font-size:15px !important;
+      font-weight: normal;
+    }
+    .warmite{
+      background-color:#fff;
+    }
+    #AllBlack{
+      background-color:#000;
+    }
+    .attHiKrani{
+      display: block;
+      border:dashed 1px #111;
+      padding:1%; 
+    }
+    .conti{
+      align-content: center;
+      padding:1%;
+      text-align: center;
+      color:#000;
+      border:2px #111 solid;
+      background-color:#ccc;
+    }
+    .topSpacew{  
+      width: 100%;
+      padding-top:5%;
+    }
+    #asli{
+      display: none;
+    }
+   .calc,.calc:hover{
+        color:#000;
+        background-color:#fff;
+    }  
+    @media print 
+    {
+      .page-break{display:block; page-break-before: always;}
+    }    
+    </style>
+  <script src="../../../../../js/karmansoly.js"></script>
+  </head>
+
+  <body id="page-top">
+<div class="bady">
+    <!-- Navigation -->
+<div class="fixed-top">
+
+    <nav class="navbar navbar-expand-lg navbar-dark hidden-print" id="mainNav" style="padding-top:.5%;padding-bottom:.5%;border:solid 3px #000 ;background:rgba(51,51,51,0.9) !important;">
+      <div class="container-fluid">
+        <a class="navbar-brand js-scroll-trigger" href="/" style="font-size:20px;">
+            <i class="fa fa-connectdevelop fa-spin" style="font-size:40px;" aria-hidden="true"></i>
+              &nbspKapoorz App 
+      </a>
+        <button class="navbar-toggler hidden-print" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon  hidden-print"></span>
+        </button>
+        <div class="collapse navbar-collapse  hidden-print" id="navbarResponsive">      
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="/artical">Articals</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="/container">Container</a>
+              </li>
+            </ul>
+        </div>
+      <a class=" hidden-print" style="color:#fff;margin-left:2% ;font-size:3.5rem" onclick="test();"><i class="fa fa-refresh" aria-hidden="true"></i></a>   
+      </div>
+    </nav>
+<div class="conti">
+ <div class="had">Container Number : <%= cza %></div>
+</div>
+<div class="topSpacew"></div>
+
+</div>
+<div class="topSpace"></div>
+<br class="hidden-print"><br class="hidden-print"><br class="hidden-print">
+<a style="margin-left:2%;color:#ddd;" class="hidden-print btn bg-dark" href="/container/view">
+<i style="font-size:2.75rem;" class="fa fa-arrow-circle-left" aria-hidden="true"></i>  
+</a>
+<a class="btn bg-dark hidden-print" style="font-size:2.5rem;margin-left:41%;color:#ddd;" onclick="prt();"><i style="font-size:3.5rem;" class="fa fa-print" aria-hidden="true">&nbsp</i>Print</a>
+  <br class="hidden-print"><br class="hidden-print"><br class="hidden-print">
+
+<div class="container hidden-print" style="width:40%;">
+  <table class="table" style="border:groove 7px #ccc;border-radius:3%;" >
+  <thead class="text-center">
+      <tr style="color:#fff;background-color:#222;border-bottom:groove 6px #ccc;border-radius:3%;">
+        <th class="h1" colspan="8">Articals Quantity</th>
+      </tr>
+  </thead>
+
+  <tbody id="asd">
+    <% for (var findArts of findArts) { %>
+     <tr class="text-center calc">
+        <td colspan="2"></td>
+        <td colspan="2" id="art_no"><%= findArts.art_no %></td>
+
+        <td>x</td>
+        <td colspan="3">
+          <input type="number" id="cc" value="" class="form-control" style="color:#000;font-weight: bold;font-size:1.5rem" placeholder="How Many of it">
+        </td>
+     </tr>
+
+      <tr id="asli" class="text-center">
+        <td id="leather_q"><%= findArts.leather_q %></td>
+        <td id="leatherTyp"><%= findArts.leatherTyp %></td>
+        <td id="leather_q2"><%= findArts.leather_q2 %></td>
+        <td id="leatherTyp2"><%= findArts.leatherTyp2 %></td>
+        <td id="belt_no"><%= findArts.belt_no %></td>
+        <td id="belt_typ"><%= findArts.belt_typ %></td>
+        <td id="belt_no2"><%= findArts.belt_no2 %></td>
+        <td id="belt_typ2"><%= findArts.belt_typ2 %></td>
+        <td id="belt_no3"><%= findArts.belt_no3 %></td>
+        <td id="belt_typ3"><%= findArts.belt_typ3 %></td>
+
+        <td id="th_no" ><%= findArts.th_no %></td>
+        <td id="th_size"><%= findArts.th_size %></td>
+        <td id="th_color"><%= findArts.th_color %></td>
+        
+        <td id="buckel_no"><%= findArts.buckel_no %></td>
+        <td id="buckel_typ"><%= findArts.buckel_typ %></td>
+        <td id="buckel_color"><%= findArts.buckel_color %></td>
+        
+        <td id="zip_no1"> <%= findArts.zip_no1 %> </td>
+        <td id="zip_typ1"> <%= findArts.zip_typ1 %> </td>
+        <td id="zip_no2"> <%= findArts.zip_no2 %> </td>
+        <td id="zip_typ2"> <%= findArts.zip_typ2 %> </td>
+        <td id="zip_color"> <%= findArts.zip_color %> </td>
+
+        <td id="runner_no1"> <%= findArts.runner_no1 %> </td>
+        <td id="runner_typ1"> <%= findArts.runner_typ1 %> </td>
+        <td id="runner_no2"> <%= findArts.runner_no2 %> </td>
+        <td id="runner_typ2"> <%= findArts.runner_typ2 %> </td>
+        <td id="runner_color"> <%= findArts.runner_color %> </td>
+
+        <td id="hh_no1" ><%= findArts.hh_no1 %></td>
+        <td id="hh_typ1"><%= findArts.hh_typ1 %></td>
+        <td id="hh_no2" ><%= findArts.hh_no2 %></td>
+        <td id="hh_typ2"><%= findArts.hh_typ2 %></td>
+        <td id="hh_color"><%= findArts.hh_color %></td>
+        
+        <td id="washer_no" ><%= findArts.washer_no %></td>
+        <td id="washer_color"><%= findArts.washer_color %></td>
+        
+        <td id="cap_no" ><%= findArts.cap_no %></td>
+        <td id="cap_color"><%= findArts.cap_color %></td>
+        
+        <td id="antstud_no"><%= findArts.antstud_no %></td>
+        
+        <td id="frame_no"><%= findArts.frame_no %></td>
+        
+        <td id="pipe_no"><%= findArts.pipe_no %></td>
+        
+        <td id="dh_q"><%= findArts.dh_q %></td>
+        <td id="dh_typ"><%= findArts.dh_typ %></td>
+        <td id="dh_pti_q"><%= findArts.dh_pti_q %></td>
+
+        
+        <td id="wellcro_clr"><%= findArts.wellcro_clr %></td>
+        <td id="wellcro_typ"><%= findArts.wellcro_typ %></td>
+        <td id="wL_q"><%= findArts.wL_q %></td>
+        <td id="wH_q"><%= findArts.wH_q %></td>
+        
+        <td id="ilet_q"><%= findArts.ilet_q %></td>
+        <td id="ilet_colr"><%= findArts.ilet_colr %></td>
+        <td id="ilet_typ"><%= findArts.ilet_typ %></td>
+        
+        <td id="tchain_q"><%= findArts.tchain_q %></td>
+        <td id="tchain_typ"><%= findArts.tchain_typ %></td>
+        <td id="tchain_colr"><%= findArts.tchain_colr %></td>
+        
+        <td id="jhook_q"><%= findArts.jhook_q %></td>
+        <td id="jhook_colr"><%= findArts.jhook_colr %></td>
+        
+        <td id="green_q"><%= findArts.green_q %></td>
+        <td id="green_typ"><%= findArts.green_typ %></td>
+        
+        <td id="tich_q"><%= findArts.tich_q %></td>
+        <td id="tich_typ"><%= findArts.tich_typ %></td>
+        <td id="tich_colr"><%= findArts.tich_colr %></td>
+    
+        <td id="rivtTyp"><%= findArts.rivtTyp %></td>
+        <td id="rivet_color"><%= findArts.rivet_color %></td>
+        <td id="rivt1"><%= findArts.rivtSize1 %></td>
+        <td id="rivet_q1"><%= findArts.rivet_q1 %></td>
+        <td id="rivt2"><%= findArts.rivtSize2 %></td>
+        <td id="rivet_q2"><%= findArts.rivet_q2 %></td>
+        <td id="rivt3"><%= findArts.rivtSize3 %></td>
+        <td id="rivet_q3"><%= findArts.rivet_q3 %></td>
+        <td id="rivt4"><%= findArts.rivtSize4 %></td>
+        <td id="rivet_q4"><%= findArts.rivet_q4 %></td>
+      </tr><% } %>
+      <tr class="calc">
+        <td colspan="3"></td>
+        <td colspan="2">
+      <a class="btn bg-primary hidden-print" onclick="getMf();" style="font-size:1.5rem;margin-left:50%;color:#ddd;"> Calculate</a>
+        </td>
+        <td colspan="3"></td>
+      </tr>
+  </tbody>
+  </table>
+</div>
+<br class="hidden-print"><br class="hidden-print"><br class="hidden-print">
+<!-- print_Div  print_Div  print_Div  print_Div  print_Div  print_Div  print_Div -->
+
+
+<div class="container warmite">
+
+
+  <hr id="AllBlack">
+  <div class="attHiKrani">
+      <div class="had">Belt's</div>
+      <div class="data" id="belt"></div>
+  </div>
+
+  <hr id="AllBlack">
+  <div class="attHiKrani">
+      <div class="had">Buckel's</div>
+      <div class="data" id="buckl"></div>
+  </div>
+
+  <hr id="AllBlack">
+  <div class="attHiKrani">
+      <div class="had">Tape Holder's</div>
+      <div class="data" id="th"></div>
+  </div>
+
+  <hr id="AllBlack">
+  <div class="attHiKrani">
+      <div class="had">Hammer Holder's</div>
+      <div class="data" id="hamrhdlr"></div>
+  </div>
+
+
+<div class="topSpacew page-break"></div>
+
+
+  <hr id="AllBlack">
+  <div class="attHiKrani">
+      <div class="had">Leather's</div>
+      <div class="data" id="leather"></div>
+  </div>
+
+  <hr id="AllBlack">
+  <div class="attHiKrani ">
+      <div class="had">Rivet's</div>
+      <div class="data" id="rivett"></div>
+  </div>
+
+
+<div class="topSpacew page-break"></div>
+
+   <hr id="AllBlack">
+  <div class="attHiKrani">
+      <div class="had">Imported Cap's</div>
+      <div class="data" id="ImpCap"></div>
+  </div>
+
+  <hr id="AllBlack">
+  <div class="attHiKrani">
+      <div class="had">4.5" (pvc) Pipe's</div>
+      <div class="data" id="pipee"></div>
+  </div>
+
+  <hr id="AllBlack">
+  <div class="attHiKrani">
+      <div class="had">Washer's</div>
+      <div class="data" id="Washerr"></div>
+  </div>
+
+  <hr id="AllBlack">
+  <div class="attHiKrani">
+      <div class="had">Antique Stud's</div>
+      <div class="data" id="AStud"></div>
+  </div>
+
+  <hr id="AllBlack">
+  <div class="attHiKrani">
+      <div class="had">20" Frame's</div>
+      <div class="data" id="Framee"></div>
+  </div> 
+
+  <hr id="AllBlack">
+  <div class="attHiKrani">
+      <div class="had">Tich Button's</div>
+      <div class="data" id="ttich"></div>
+  </div> 
+
+  <hr id="AllBlack">
+  <div class="attHiKrani">
+      <div class="had">Green Liner's</div>
+      <div class="data" id="greenLine"></div>
+  </div> 
+
+
+<div class="topSpacew page-break"></div>
+
+  <hr id="AllBlack">
+  <div class="attHiKrani">
+      <div class="had">J-Hook's</div>
+      <div class="data" id="jhHook"></div>
+  </div> 
+
+  <hr id="AllBlack">
+  <div class="attHiKrani">
+      <div class="had">Dog-Hook's</div>
+      <div class="data" id="ddhook"></div>
+  </div> 
+
+  <hr id="AllBlack">
+  <div class="attHiKrani">
+      <div class="had">T-Chain's</div>
+      <div class="data" id="tChaain"></div>
+  </div> 
+
+
+  <hr id="AllBlack">
+  <div class="attHiKrani">
+      <div class="had">Ilet's</div>
+      <div class="data" id="illet"></div>
+  </div> 
+
+  <hr id="AllBlack">
+  <div class="attHiKrani">
+      <div class="had">Welcro</div>
+      <div class="data" id="weeellcro"></div>
+  </div> 
+
+
+  <hr id="AllBlack">
+  <div class="attHiKrani">
+      <div class="had">Zip's</div>
+      <div class="data" id="dvzp"></div>
+  </div> 
+
+  <hr id="AllBlack">
+  <div class="attHiKrani">
+      <div class="had">Runner's</div>
+      <div class="data" id="dvrner"></div>
+  </div> 
+
+<div class="topSpacew page-break"></div>
+  
+  <hr id="AllBlack">
+  <div class="attHiKrani">
+      <div class="had">Arts</div>
+      <div class="data" id="mgck"></div>
+  </div>
+  <hr id="AllBlack">
+
+</div> <!-- dv -->
+
+<!-- print_Div  print_Div  print_Div  print_Div  print_Div  print_Div  print_Div -->
+
+
+<div class="fixed-bottom" style="background:rgba(55,55,55,0.1);margin-bottom:3%;
+    filter: alpha(opacity=30);
+    filter: progid: DXImageTransform.Microsoft.Alpha(opacity=30);
+    -moz-opacity: 0.30;border-top:groove #111 2px;border-bottom:groove #111 2px;">  
+    <!-- Footer -->
+    <footer style="padding:1%;">
+      <div class="container">
+        <p class="text-center" style="font-size:20px;">
+          <!-- <i class="fa fa-connectdevelop" style="font-size:25px;"> </i> -->
+          &nbsp&nbspCopyright &copy; Kapoor'z Infotech 2018&nbsp&nbsp
+         <!--  <i class="fa fa-connectdevelop" style="font-size:25px;"> </i> -->
+      </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+</div>
+</div> <!-- bdy -->
+     
+  </body>
+
+</html>

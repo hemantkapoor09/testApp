@@ -1,0 +1,642 @@
+<% include headSub.ejs %>
+<style>
+	.ii{
+		font-size:2.0rem;
+	}
+	hr{
+		background-color:#ccc;
+	}
+</style>
+
+<div class="container-fluid topSpace">
+<div class="row">
+	<div class="col-lg-8 col-md-8 col-sm-8" style="margin-right: auto;margin-left: auto;">
+	<div class="panel panel-primary">
+		<div class="panel-heading hd h1"><i class="ii fa fa-plus" aria-hidden="true">&nbsp </i>&nbsp Add New Item</div>
+		<div class="panel-body za">
+
+<!-- form in this colm -->
+<form action="/artical/new" method="POST">
+	<div class="form-group form-inline">
+		<label class="control-label"><i class="ii glyphicon glyphicon-list-alt">&nbsp</i>Artical Number
+		&nbsp:&nbsp&nbsp</label>
+		<input type="text" class="form-control fmCTxt" name="art_no" placeholder="Enetr Artical Number">
+	</div><br><hr><br>
+
+	<!--BELT  BELT  BELT  BELT  BELT  BELT  BELT  BELT  BELT  BELT  BELT  BELT  BELT  BELT  -->
+<div class="form-group"> 
+	<div class="form-inline">
+			<label class="control-label"> <i class="ii glyphicon glyphicon-road" style="transform: rotate(270deg);"></i> &nbspBelt 1&nbsp:&nbsp</label>
+			<input type="number" min=0 class="form-control fmCTxt" name="belt_q" placeholder="Enetr Quantity">
+
+			<label class="control-label"> &nbsp&nbsp Type :&nbsp&nbsp</label>
+	      	<select class="form-control fmCSelect" name="belt_typ">
+				<option value="" selected disabled>Select Belt 1</option>
+				<option value="LEATHER BELT">LEATHER BELT</option>
+		        <option value="BLK/NALI BELT">BLK/NALI BELT 9 LINE</option>
+		        <option value="SPCL 50 BLK/NALI BELT">SPCL 50 BLK/NALI BELT</option>
+		        <option value="SPCL 56 BLK/NALI BELT">SPCL 56 BLK/NALI BELT</option>
+		        <option value="HEYV SPCL 50 BLK PALIN BELT">HEYV SPCL 50 BLK PALIN BELT</option>
+		        <option value="BLK EXTRA POW 2'X 35' ">BLK EXTRA POW 2" X 35" </option>
+		        <option value="BLK NALI 2' K BRAND 56' -136grm">BLK NALI 2" K BRAND 56" -136grm</option>
+		        <option value="BLK YELO LINE 2'  53' ">BLK YELO LINE 2'  53' </option>
+		        <option value="38 BLK BELT 11'">38 BLK BELT 11"</option>
+		        <option value="43 BLK BELT 11'">43 BLK BELT 11"</option>
+		        <option value="YELO BLK LINE 2' 4.5' ">YELO BLK LINE 2' 4.5'</option>
+		        <option value="Mouse Color -56' ">Mouse Color -56" </option>
+		        <option value="KHAKI -52' ">KHAKI -52"</option>
+		        <option value="38 BLK HVY SPL BELT">38 BLK HVY SPL BELT</option>
+		        <option value="25 BLK HVY SPL BELT">25 BLK HVY SPL BELT</option>
+		        <option value="NVY BLUE 50MM 41'">NVY BLUE 50MM 41'"</option>
+		        <option value="BLACK 50MM 41'">BLACK 50MM 41'</option>
+		        <option value="RED 50MM 41'">RED 50MM 41'</option>
+		        <option value="BLK YELO LINE 4.5' ">BLK YELO LINE 4.5' </option>
+		        <option value="YELO BLK LINE 4.5' ">YELO BLK LINE 4.5' </option>
+	      	</select>
+      </div><br>
+   	<div class="form-inline">
+			<label class="control-label">  &nbsp&nbsp  &nbsp&nbspBelt 2&nbsp:&nbsp</label>
+			<input type="number" min=0 class="form-control fmCTxt" name="belt_q2" placeholder="Enetr Quantity">
+
+			<label class="control-label"> &nbsp&nbsp Type :&nbsp&nbsp</label>
+	      	<select class="form-control fmCSelect" name="belt_typ2">
+				<option value="" selected disabled>Select Belt 2</option>
+				<option value="LEATHER BELT">LEATHER BELT</option>
+		        <option value="BLK/NALI BELT">BLK/NALI BELT 9 LINE</option>
+		        <option value="SPCL 50 BLK/NALI BELT">SPCL 50 BLK/NALI BELT</option>
+		        <option value="SPCL 56 BLK/NALI BELT">SPCL 56 BLK/NALI BELT</option>
+		        <option value="HEYV SPCL 50 BLK PALIN BELT">HEYV SPCL 50 BLK PALIN BELT</option>
+		        <option value="BLK EXTRA POW 2'X 35' ">BLK EXTRA POW 2" X 35" </option>
+		        <option value="BLK NALI 2' K BRAND 56' -136grm">BLK NALI 2" K BRAND 56" -136grm</option>
+		        <option value="BLK YELO LINE 2'  53' ">BLK YELO LINE 2'  53' </option>
+		        <option value="38 BLK BELT 11'">38 BLK BELT 11"</option>
+		        <option value="43 BLK BELT 11'">43 BLK BELT 11"</option>
+		        <option value="YELO BLK LINE 2' 4.5' ">YELO BLK LINE 2' 4.5'</option>
+		        <option value="Mouse Color -56' ">Mouse Color -56" </option>
+		        <option value="KHAKI -52' ">KHAKI -52"</option>
+		        <option value="38 BLK HVY SPL BELT">38 BLK HVY SPL BELT</option>
+		        <option value="25 BLK HVY SPL BELT">25 BLK HVY SPL BELT</option>
+		        <option value="NVY BLUE 50MM 41'">NVY BLUE 50MM 41'"</option>
+		        <option value="BLACK 50MM 41'">BLACK 50MM 41'</option>
+		        <option value="RED 50MM 41'">RED 50MM 41'</option>
+		        <option value="BLK YELO LINE 4.5' ">BLK YELO LINE 4.5' </option>
+		        <option value="YELO BLK LINE 4.5' ">YELO BLK LINE 4.5' </option>
+	      	</select>
+      </div><br>
+      <div class="form-inline">
+			<label class="control-label">  &nbsp&nbsp  &nbsp&nbspBelt 2&nbsp:&nbsp</label>
+			<input type="number" min=0 class="form-control fmCTxt" name="belt_q3" placeholder="Enetr Quantity">
+
+			<label class="control-label"> &nbsp&nbsp Type :&nbsp&nbsp</label>
+	      	<select class="form-control fmCSelect" name="belt_typ3">
+				<option value="" selected disabled>Select Belt 3</option>
+				<option value="LEATHER BELT">LEATHER BELT</option>
+		        <option value="BLK/NALI BELT">BLK/NALI BELT 9 LINE</option>
+		        <option value="SPCL 50 BLK/NALI BELT">SPCL 50 BLK/NALI BELT</option>
+		        <option value="SPCL 56 BLK/NALI BELT">SPCL 56 BLK/NALI BELT</option>
+		        <option value="HEYV SPCL 50 BLK PALIN BELT">HEYV SPCL 50 BLK PALIN BELT</option>
+		        <option value="BLK EXTRA POW 2'X 35' ">BLK EXTRA POW 2" X 35" </option>
+		        <option value="BLK NALI 2' K BRAND 56' -136grm">BLK NALI 2" K BRAND 56" -136grm</option>
+		        <option value="BLK YELO LINE 2'  53' ">BLK YELO LINE 2'  53' </option>
+		        <option value="38 BLK BELT 11'">38 BLK BELT 11"</option>
+		        <option value="43 BLK BELT 11'">43 BLK BELT 11"</option>
+		        <option value="YELO BLK LINE 2' 4.5' ">YELO BLK LINE 2' 4.5'</option>
+		        <option value="Mouse Color -56' ">Mouse Color -56" </option>
+		        <option value="KHAKI -52' ">KHAKI -52"</option>
+		        <option value="38 BLK HVY SPL BELT">38 BLK HVY SPL BELT</option>
+		        <option value="25 BLK HVY SPL BELT">25 BLK HVY SPL BELT</option>
+		        <option value="NVY BLUE 50MM 41'">NVY BLUE 50MM 41'"</option>
+		        <option value="BLACK 50MM 41'">BLACK 50MM 41'</option>
+		        <option value="RED 50MM 41'">RED 50MM 41'</option>
+		        <option value="BLK YELO LINE 4.5' ">BLK YELO LINE 4.5' </option>
+		        <option value="YELO BLK LINE 4.5' ">YELO BLK LINE 4.5' </option>
+	      	</select>
+      </div>
+</div><br><hr><br>
+
+	<!-- TAPE HOLDER   TAPE HOLDER   TAPE HOLDER   TAPE HOLDER   TAPE HOLDER   TAPE HOLDER  -->
+	<div class="form-group form-inline">
+		<label class="control-label"><i class="ii fa fa-arrows-h" aria-hidden="true"></i>&nbspTape Holder&nbsp:</label>
+		<input type="number" min=0 class="form-control fmCTxt" name="th_q" placeholder="Enetr Quantity">
+	</div><br>
+	<div class="form-group form-inline">
+		<label class="control-label"> &nbsp &nbsp Size :</label>
+		<select class="form-control fmCSelect" name="th_size">
+			<option value="" selected disabled>Select Size</option>
+			<option value="LARGE">LARGE</option>
+			<option value="SMALL">SMALL</option>
+			<option value="STANDARD">STANDARD</option>
+		</select>
+		<label class="control-label"> &nbsp &nbsp Color :</label>
+			<label class="control-label rd">Nickel&nbsp</label><input class="form-control" type="radio" name="th_typ" value="nickel">
+    		<label class="control-label rd">Black&nbsp</label><input class="form-control" type="radio" name="th_typ" value="black">
+    		<label class="control-label rd">Antique&nbsp</label><input class="form-control" type="radio" name="th_typ" value="antique">
+	</div><br><hr><br>
+
+	<!-- BUCKEL   BUCKEL   BUCKEL   BUCKEL   BUCKEL   BUCKEL   BUCKEL   BUCKEL   BUCKEL   BUCKEL  -->
+
+<div class="form-group"> 
+	<div class="form-inline">
+			<label class="control-label"> <i class="ii fa fa-film fa-rotate-90"></i> &nbspBuckel&nbsp:&nbsp</label>
+			<input type="number" min=0 class="form-control fmCTxt" name="buckel_q" placeholder="Enetr Quantity">
+	</div><br>
+	<div class="form-inline">
+			<label class="control-label"> &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp Type :&nbsp&nbsp</label>
+	      	<select class="form-control fmCSelect" name="buckel_typ">
+				<option value="" selected disabled>Select Buckel</option>
+				<option value="BKL 2¼' METAL- 3 PCS SET">BKL 2¼" METAL- 3 PCS SET</option>
+		        <option value="ROLLER  D/PIN 2'">ROLLER  D/PIN 2" </option>
+		        <option value="ROLLER S/PIN">ROLLER S/PIN  2"</option>
+		        <option value="3/4' ROLLER S/PIN SET">3/4" ROLLER S/PIN SET</option>
+		        <option value="2' PB--ME SET">2" PB--ME SET</option>
+		        <option value="3/4' KARI">3/4" KARI SET</option>
+		        <option value="1' S/SPINDEL KNEE-PAD">1" S/SPINDEL KNEE-PAD</option>
+		        <option value="3/4' D/SPINDEL KNEE-PAD">3/4" D/SPINDEL KNEE-PAD</option>
+		        <option value="1 3/4' BOX">1 3/4" BOX</option>
+		        <option value="1 1/2' S/PIN ROOLER">1 1/2" S/PIN ROOLER</option>
+		        <option value="2 1/4' metal heavy with hook-5pcs">2 1/4" Metal Heavy With Hook-5pcs</option>
+	      	</select>
+	    	<label class="control-label">&nbsp &nbsp &nbsp &nbsp Color :&nbsp </label>
+			<label class="control-label rd">Nickel&nbsp</label><input class="form-control" type="radio" name="buckel_color" value="nickel">
+    		<label class="control-label rd">Black&nbsp</label><input class="form-control" type="radio" name="buckel_color" value="black">
+    		<label class="control-label rd">Antique&nbsp</label><input class="form-control" type="radio" name="buckel_color" value="antique">  	
+      </div>
+</div><br><hr><br>
+
+	<!-- HAMMER HOLDER   HAMMER HOLDER   HAMMER HOLDER   HAMMER HOLDER   HAMMER HOLDER   HAMMER HOLDER  -->
+
+	<div class="form-group form-inline">
+		<label class="control-label"><i class="ii fa fa-gavel" aria-hidden="true"></i>&nbsp Hamer Holder&nbsp:&nbsp</label>
+		<input type="number" min=0 class="form-control fmCTxt" name="hh_q1" placeholder="Enetr Quantity">
+		<label class="control-label"> &nbsp &nbsp&nbsp &nbsp&nbspType :&nbsp </label>
+		<select class="form-control fmCSelect" name="hh_typ1">
+			<option value="" selected disabled>TYPE 1</option>
+			<option value="FIXED">FIXED</option>
+	        <option value="SPRING">SPRING</option>
+	        <option value="REVOLVING NORMAL">REVOLVING NORMAL</option>
+	        <option value="REVOLVING HVY">REVOLVING HVY</option>
+      	</select>
+      </div><br>
+	
+	<div class="form-group form-inline">
+      	<label class="control-label">&nbsp &nbsp &nbsp &nbsp Color :&nbsp </label>
+			<label class="control-label rd">Nickel&nbsp</label><input class="form-control" type="radio" name="hh_color" value="nickel">
+    		<label class="control-label rd">Black&nbsp</label><input class="form-control" type="radio" name="hh_color" value="black">
+    		<label class="control-label rd">Antique&nbsp</label><input class="form-control" type="radio" name="hh_color" value="antique">
+      </div><br>
+<div class="form-group form-inline">
+		<label class="control-label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp2 - Hamer Holder&nbsp:&nbsp</label>
+		<input type="number" min=0 class="form-control fmCTxt" name="hh_q2" placeholder="Enetr Quantity">
+		<label class="control-label"> &nbsp &nbsp&nbsp &nbsp&nbspType :&nbsp </label>
+		<select class="form-control fmCSelect" name="hh_typ2">
+			<option value="" selected disabled>TYPE 1</option>
+			<option value="FIXED">FIXED</option>
+	        <option value="SPRING">SPRING</option>
+	        <option value="REVOLVING NORMAL">REVOLVING NORMAL</option>
+	        <option value="REVOLVING HVY">REVOLVING HVY</option>
+      	</select>
+	</div><br><hr><br>
+
+<!--  Imp Cap    Imp Cap    Imp Cap    Imp Cap    Imp Cap    Imp Cap    Imp Cap    Imp Cap    Imp Cap  -->
+	<div class="form-group form-inline">
+		<label class="control-label"><i class="fa fa-circle" aria-hidden="true"></i>&nbsp Imported Cap&nbsp:&nbsp</label>
+		<input type="number" min=0 class="form-control fmCTxt" name="cap_q" placeholder="Enetr Quantity">
+		<label class="control-label"> &nbsp &nbsp Color :&nbsp &nbsp</label>
+		  <label class="control-label rd">Nickel&nbsp</label>
+		  <input class="form-control " type="radio" name="cap_typ" value="nickel">
+    	  
+    	  <label class="control-label rd">Black&nbsp</label>
+    	  <input class="form-control " type="radio" name="cap_typ" value="black">
+    	  
+    	  <label class="control-label rd">Antique&nbsp</label>
+    	  <input class="form-control " type="radio" name="cap_typ" value="antique">
+	</div> <br><hr><br>
+
+
+<!--  tich button tich button    tich button    tich button    tich button    tich button    tich button  -->
+	<div class="form-group form-inline">
+		<label class="control-label"><i class="fa fa-circle" aria-hidden="true"></i>&nbsp Tich Button&nbsp:&nbsp</label>
+		<input type="number" min=0 class="form-control fmCTxt" name="tich_q" placeholder="Enetr Quantity">
+		
+		<label class="control-label"> &nbsp &nbsp Color :&nbsp &nbsp</label>
+		  <label class="control-label rd">Nickel&nbsp</label>
+		  <input class="form-control" type="radio" name="tich_colr" value="nickel">
+    	  
+    	  <label class="control-label rd">Black&nbsp</label>
+    	  <input class="form-control" type="radio" name="tich_colr" value="black">
+    	  
+    	  <label class="control-label rd">Antique&nbsp</label>
+    	  <input class="form-control" type="radio" name="tich_colr" value="antique">
+	</div>
+	<div class="form-group form-inline">
+		<label class="control-label">&nbsp Type :&nbsp</label>
+		<select class="form-control fmCSelect" name="tich_typ">
+			<option value="" selected disabled>--</option>
+			<option value="ukas vt7/7">UKAS VT 7/7</option>
+      	</select>
+	</div> <br><hr><br>
+
+<!--  J-Hook  J-Hook  J-Hook  J-Hook  J-Hook  J-Hook  J-Hook  J-Hook  J-Hook  J-Hook  J-Hook  J-Hook  -->
+	<div class="form-group form-inline">
+		<label class="control-label"><i class="fa fa-circle" aria-hidden="true"></i>&nbsp J-Hook&nbsp:&nbsp</label>
+		<input type="number" min=0 class="form-control fmCTxt" name="jhook_q" placeholder="Enetr Quantity">
+		
+		<label class="control-label"> &nbsp &nbsp Color :&nbsp &nbsp</label>
+		  <label class="control-label rd">Nickel&nbsp</label>
+		  <input class="form-control" type="radio" name="jhook_colr" value="nickel">
+    	  
+    	  <label class="control-label rd">Black&nbsp</label>
+    	  <input class="form-control" type="radio" name="jhook_colr" value="black">
+    	  
+    	  <label class="control-label rd">Antique&nbsp</label>
+    	  <input class="form-control" type="radio" name="jhook_colr" value="antique">
+	</div> <br><hr><br>
+
+<!--  T-CHAIN  T-CHAIN  T-CHAIN  T-CHAIN  T-CHAIN  T-CHAIN  T-CHAIN  T-CHAIN  T-CHAIN  T-CHAIN  T-CHAIN  T-CHAIN  -->
+	<div class="form-group form-inline">
+		<label class="control-label"><i class="fa fa-circle" aria-hidden="true"></i>&nbsp T-Chain&nbsp:&nbsp</label>
+		<input type="number" min=0 class="form-control fmCTxt" name="tchain_q" placeholder="Enetr Quantity">
+		
+		<label class="control-label"> &nbsp &nbsp Color :&nbsp &nbsp</label>
+		  <label class="control-label rd">Nickel&nbsp</label>
+		  <input class="form-control" type="radio" name="tchain_colr" value="nickel">
+    	  
+    	  <label class="control-label rd">Black&nbsp</label>
+    	  <input class="form-control" type="radio" name="tchain_colr" value="black">
+    	  
+    	  <label class="control-label rd">Antique&nbsp</label>
+    	  <input class="form-control" type="radio" name="tchain_colr" value="antique">
+    </div>
+	<div class="form-group form-inline">
+    	<label class="control-label">&nbsp Type :&nbsp</label>
+    	<select class="form-control fmCSelect" name="tchain_typ">
+			<option value="" selected disabled>--</option>
+			<option value="heavy">Heavy</option>
+			<option value="normal">Normal</option>
+      	</select>
+	</div> <br><hr><br>
+
+
+<!--  WASHER    WASHER    WASHER    WASHER    WASHER    WASHER    WASHER    WASHER    WASHER    WASHER  -->
+	<div class="form-group form-inline">
+		<label class="control-label"><i class="ii fa fa-circle-o" aria-hidden="true"></i>&nbsp Washer&nbsp:&nbsp</label>
+		<input type="number" min=0 class="form-control fmCTxt" name="washer_q" placeholder="Enetr Quantity">
+		<label class="control-label"> &nbsp &nbsp Color :&nbsp &nbsp</label>
+		  <label class="control-label rd">Nickel&nbsp</label>
+		  <input class="form-control " type="radio" name="washer_typ" value="nickel">
+    	  
+    	  <label class="control-label rd">Black&nbsp</label>
+    	  <input class="form-control " type="radio" name="washer_typ" value="black">
+    	  
+    	  <label class="control-label rd">Antique&nbsp</label>
+    	  <input class="form-control " type="radio" name="washer_typ" value="antique">
+	</div> <br><hr><br>
+
+
+<!--  GREEN LINER   GREEN LINER   GREEN LINER   GREEN LINER    GREEN LINER     GREEN LINER   GREEN LINER    -->
+	<div class="form-group form-inline">
+		<label class="control-label"><i class="fa fa-circle" aria-hidden="true"></i>&nbsp GREEN LINER&nbsp:&nbsp</label>
+		<input type="number" min=0 class="form-control fmCTxt" name="green_q" placeholder="Enetr Quantity">
+		<label class="control-label">&nbsp&nbsp&nbsp&nbsp Type :&nbsp</label>
+			<select class="form-control fmCSelect" name="green_typ">
+			<option value="" selected disabled>--</option>
+			<option value="23 gm">23 gm</option>
+			<option value="36 gm">36 gm</option>
+			<option value="13.20 gm">13.20 gm</option>
+      	</select>
+	</div> <br><hr><br>
+
+
+<!--  Dog-Hook   Dog-Hook   Dog-Hook   Dog-Hook    Dog-Hook     Dog-Hook   Dog-Hook    -->
+	<div class="form-group form-inline">
+		<label class="control-label"><i class="fa fa-circle" aria-hidden="true"></i>&nbsp Dog Hook&nbsp:&nbsp</label>
+		<input type="number" min=0 class="form-control fmCTxt" name="dh_q" placeholder="Enetr Quantity">
+		<label class="control-label">&nbsp&nbsp&nbsp&nbsp Type :&nbsp</label>
+			<select class="form-control fmCSelect" name="dh_typ">
+			<option value="" selected disabled>--</option>
+			<option value="(3/4)' ">(3/4)"</option>
+			<option value="1' Oval">1" Oval</option>
+			<option value="1' Kenchy">1" Kenchy</option>
+			<option value="1' Heavy Spcl(CLC)">1" Heavy Spcl(CLC)</option>
+			<option value="1 (1/2)' Heavy">1 (1/2)" Heavy</option>
+			<option value="1 (1/2)' Light">1 (1/2)" Light</option>
+      	</select>
+	</div> <br>
+	<div class="form-group form-inline">
+		<label class="control-label">&nbsp Pati D-Holder&nbsp:&nbsp</label>
+		<input type="number" min=0 class="form-control fmCTxt" name="dh_pti_q" placeholder="Enetr Quantity">
+	</div><br><hr><br>
+
+
+<!--  Ilet   Ilet   Ilet   Ilet    Ilet     Ilet   Ilet    -->
+	<div class="form-group form-inline">
+		<label class="control-label"><i class="fa fa-circle" aria-hidden="true"></i>&nbsp ILet&nbsp:&nbsp</label>
+		<input type="number" min=0 class="form-control fmCTxt" name="ilet_q" placeholder="Enetr Quantity">
+		<label class="control-label"> &nbsp &nbsp Color :&nbsp &nbsp</label>
+		  <label class="control-label rd">Nickel&nbsp</label>
+		  <input class="form-control" type="radio" name="ilet_colr" value="nickel">
+    	  
+    	  <label class="control-label rd">Golden&nbsp</label>
+    	  <input class="form-control" type="radio" name="ilet_colr" value="golden">
+    	  
+    	  <label class="control-label rd">Black&nbsp</label>
+    	  <input class="form-control" type="radio" name="ilet_colr" value="black">	
+
+	</div>
+	<div class="form-group form-inline">
+			<label class="control-label">&nbsp&nbsp&nbsp&nbsp Type :&nbsp</label>
+			<select class="form-control fmCSelect" name="ilet_typ">
+			<option value="" selected disabled>--</option>
+			<option value="900 Number Big Height">900 Number Big Height</option>
+			<option value="Small Outside">Small Outside</option>
+			<option value="Big Outside">Big Outside</option>
+			<option value="900 Number Small Height">900 Number Small Height</option>
+			<option value="1500 Number">1500 Number</option>
+			<option value="700 Number(M/F)">700 Number(M/F)</option>
+			<!-- <option value="1300 Number">1300 Number</option> -->
+      	</select>
+	</div> <br><hr><br>
+
+<!--  __velcro __  __velcro __  __velcro __  __velcro __  __velcro __  __velcro __ -->
+	<label class="control-label"><i class="ii fa fa-circle-o" aria-hidden="true"></i>&nbsp Wellcro&nbsp:&nbsp</label><br><br>
+	<div class="form-group form-inline">
+	<label class="control-label">&nbsp&nbspSelect Size:&nbsp</label>
+		<select class="form-control fmCSelect" name="wellcro_typ">
+			<option value="" selected disabled>--</option>
+			<option value="(3/4)' ">(3/4)"</option>
+			<option value="1' ">1"</option>
+			<option value="1 (1/4)' ">1 (1/4)"</option>
+			<option value="1 (1/2)' ">1 (1/2)"</option>
+			<option value="2' ">2"</option>
+			<option value="3' ">3"</option>
+      	</select>
+		<label class="control-label"> &nbsp &nbsp Color :&nbsp &nbsp</label>
+		  <label class="control-label rd">Golden&nbsp</label>
+		  <input class="form-control " type="radio" name="wellcro_clr" value="golden">
+    	  
+    	  <label class="control-label rd">Black&nbsp</label>
+    	  <input class="form-control " type="radio" name="wellcro_clr" value="black">
+
+     </div><br><p>*( Length Required In Inches " )</p>
+	<div class="form-group form-inline">
+		<label class="control-label"> &nbsp Loop :&nbsp</label>
+		<input type="number" min=0 step=any class="form-control fmCTxt" name="wL_q" placeholder="Enetr Quantity">
+		<label class="control-label">&nbsp&nbsp Hook :&nbsp</label>
+		<input type="number" min=0  step=any class="form-control fmCTxt" name="wH_q" placeholder="Enetr Quantity">
+
+	</div> <br><hr><br>
+
+<!-- __Rivet__  __Rivet__  __Rivet__  __Rivet__  __Rivet__  __Rivet__  __Rivet__  __Rivet__  __Rivet__ -->
+	<label class="control-label"><i class="ii glyphicon glyphicon-asterisk">&nbsp</i>Rivet</label><br><br>
+	<div class="form-group form-inline">
+		<label class="control-label"> &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp Type :&nbsp &nbsp</label>
+      	<select class="form-control fmCSelect" name="rivtTyp">
+			<option value="" selected disabled>Select Brand</option>
+			<option value="CLC">CLC</option>
+	        <option value="PLAIN">PLAIN</option>
+      	</select>
+      	<label class="control-label"> &nbsp &nbsp Color :</label>
+			<label class="control-label rd">Nickel&nbsp</label><input class="form-control" type="radio" name="rivet_color" value="nickel">
+    		<label class="control-label rd">Black&nbsp</label><input class="form-control" type="radio" name="rivet_color" value="black">
+    		<label class="control-label rd">Antique&nbsp</label><input class="form-control" type="radio" name="rivet_color" value="antique">
+     </div><br>
+	<div class="form-group form-inline">
+		<label class="control-label">&nbsp &nbsp&nbsp &nbsp1&nbsp ◙&nbsp&nbsp &nbsp Size :&nbsp &nbsp</label>
+      	<select class="form-control fmCSelect" name="rivtSize1">
+			<option value="" selected disabled>&nbsp&nbsp-------------------------</option>
+			<option value="5.5">5.5</option>
+			<option value="7">7</option>
+			<option value="7.5">7.5</option>
+	        <option value="8.5">8.5</option>
+	        <option value="10">10</option>
+	        <option value="13">13</option>
+      	</select>&nbsp&nbsp&nbsp
+		<input type="number" min=0 class="form-control fmCTxt" name="rivet_q1" placeholder="Enetr Quantity">
+	</div>
+	<div class="form-group form-inline">
+		<label class="control-label">&nbsp &nbsp&nbsp &nbsp2&nbsp ◙&nbsp&nbsp &nbsp Size :&nbsp &nbsp</label>
+      	<select class="form-control fmCSelect" name="rivtSize2">
+			<option value="" selected disabled>&nbsp&nbsp-------------------------</option>
+			<option value="5.5">5.5</option>
+			<option value="7">7</option>
+			<option value="7.5">7.5</option>
+	        <option value="8.5">8.5</option>
+	        <option value="10">10</option>
+	        <option value="13">13</option>
+      	</select>&nbsp&nbsp&nbsp
+		<input type="number" min=0 class="form-control fmCTxt" name="rivet_q2" placeholder="Enetr Quantity">
+	</div>
+	<div class="form-group form-inline">
+		<label class="control-label">&nbsp &nbsp&nbsp &nbsp3&nbsp ◙&nbsp&nbsp &nbsp Size :&nbsp &nbsp</label>
+      	<select class="form-control fmCSelect" name="rivtSize3">
+			<option value="" selected disabled>&nbsp&nbsp-------------------------</option>
+			<option value="5.5">5.5</option>
+			<option value="7">7</option>
+			<option value="7.5">7.5</option>
+	        <option value="8.5">8.5</option>
+	        <option value="10">10</option>
+	        <option value="13">13</option>
+      	</select>&nbsp&nbsp&nbsp
+		<input type="number" min=0 class="form-control fmCTxt" name="rivet_q3" placeholder="Enetr Quantity">
+	</div>
+	<div class="form-group form-inline">
+		<label class="control-label">&nbsp &nbsp&nbsp &nbsp4&nbsp ◙&nbsp&nbsp &nbsp Size :&nbsp &nbsp</label>
+      	<select class="form-control fmCSelect" name="rivtSize4">
+			<option value="" selected disabled>&nbsp&nbsp-------------------------</option>
+			<option value="5.5">5.5</option>
+			<option value="7">7</option>
+			<option value="7.5">7.5</option>
+	        <option value="8.5">8.5</option>
+	        <option value="10">10</option>
+	        <option value="13">13</option>
+      	</select>&nbsp&nbsp&nbsp
+		<input type="number" min=0 class="form-control fmCTxt" name="rivet_q4" placeholder="Enetr Quantity">
+	</div><br><hr><br>	
+
+<!-- __Rivet__  __Rivet__  __Rivet__  __Rivet__  __Rivet__  __Rivet__  __Rivet__  __Rivet__  __Rivet__ -->
+
+
+<!-- __Antique Stud__  __Antique Stud__  __Antique Stud__  __Antique Stud__  __Antique Stud__ -->
+	<div class="form-group form-inline">
+		<label class="control-label"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>&nbsp Antique Stud &nbsp:&nbsp</label>
+		<input type="number" min=0 class="form-control fmCTxt" name="antstud_q" placeholder="Enetr Quantity">
+		
+	</div> <br><hr><br>
+
+<!-- __FRAME 20"__  __FRAME 20"__  __FRAME 20"__  __FRAME 20"__  __FRAME 20"__  __FRAME 20"__ -->
+	<div class="form-group form-inline">
+		<label class="control-label"><i class="fa fa-map-signs" aria-hidden="true"></i>&nbsp Frame 20" &nbsp:&nbsp</label>
+		<input type="number" min=0 class="form-control fmCTxt" name="frame_q" placeholder="Enetr Quantity">
+		
+	</div> <br><hr><br>
+
+<!-- __PIPE 4.5" __  __PIPE 4.5" __  __PIPE 4.5" __  __PIPE 4.5" __  __PIPE 4.5" __  __PIPE 4.5" __ -->
+	<div class="form-group form-inline">
+		<label class="control-label"><i class="fa fa-minus" aria-hidden="true"></i>&nbsp&nbspPipe 4.5" &nbsp:&nbsp</label>
+		<input type="number" min=0 class="form-control fmCTxt" name="pipe_q" placeholder="Enetr Quantity">
+	</div><br><hr><br>
+
+
+	<!-- Zip  Zip  Zip  Zip  Zip  Zip  Zip  Zip  Zip  Zip  Zip  Zip  Zip  Zip  Zip -->
+
+	<div class="form-group form-inline">
+		<label class="control-label"><i class="ii fa fa-zip" aria-hidden="true"></i>&nbsp Zip&nbsp:&nbsp</label>
+		<input type="number" min=0 step=any class="form-control fmCTxt" name="zip_q1" placeholder="Enetr Quantity">
+		<label class="control-label"> &nbsp &nbsp&nbsp &nbsp&nbspType :&nbsp </label>
+		<select class="form-control fmCSelect" name="zip_typ1">
+			<option value="" selected disabled>TYPE 1</option>
+			<option value="number 5">5 Number</option>
+			<option value="number 8">8 Number</option>
+			<option value="number 10">10 Number</option>
+      	</select>
+      </div><br>
+	
+	<div class="form-group form-inline">
+      	<label class="control-label">&nbsp &nbsp &nbsp &nbsp Color :&nbsp </label>
+			<label class="control-label rd">Navy Blue&nbsp</label><input class="form-control" type="radio" name="zip_color" value="navyblue">
+    		<label class="control-label rd">&nbsp&nbspBlack&nbsp</label><input class="form-control" type="radio" name="zip_color" value="black">
+      </div><br>
+<div class="form-group form-inline">
+		<label class="control-label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp2 - Zip&nbsp:&nbsp</label>
+		<input type="number" min=0 step=any class="form-control fmCTxt" name="zip_q2" placeholder="Enetr Quantity">
+		<label class="control-label"> &nbsp &nbsp&nbsp &nbsp&nbspType :&nbsp </label>
+		<select class="form-control fmCSelect" name="zip_typ2">
+			<option value="" selected disabled>TYPE 2</option>
+			<option value="number 5">5 Number</option>
+			<option value="number 8">8 Number</option>
+			<option value="number 10">10 Number</option>
+      	</select>
+	</div><br><hr><br>
+
+<!-- __Runner__  __Runner__  __Runner__  __Runner__  __Runner__  __Runner__  __Runner__  __Runner__ -->
+	<div class="form-group form-inline">
+		<label class="control-label"><i class="fa fa-fly" aria-hidden="true"></i>&nbsp&nbsp Runner &nbsp:&nbsp</label>
+		<input type="number" min=0 class="form-control fmCTxt" name="runner_q1" placeholder="Enetr Quantity">
+		<label class="control-label"> &nbsp &nbsp&nbsp &nbsp&nbspType :&nbsp </label>
+		<select class="form-control fmCSelect" name="runner_typ1">
+			<option value="" selected disabled>TYPE 1</option>
+			<option value="number 5">5 Number</option>
+			<option value="number 8">8 Number</option>
+			<option value="number 10">10 Number</option>
+      	</select>
+      </div><br>
+	<div class="form-group form-inline">
+      	<label class="control-label">&nbsp &nbsp &nbsp &nbsp Color :&nbsp </label>
+			<label class="control-label rd">Nickel&nbsp</label><input class="form-control" type="radio" name="runner_color" value="nickel">
+    		<label class="control-label rd">&nbsp&nbspBlack&nbsp</label><input class="form-control" type="radio" name="runner_color" value="black">
+      </div><br>
+	<div class="form-group form-inline">
+		<label class="control-label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp2 - Runner&nbsp:&nbsp</label>
+		<input type="number" min=0 class="form-control fmCTxt" name="runner_q2" placeholder="Enetr Quantity">
+		<label class="control-label"> &nbsp &nbsp&nbsp &nbsp&nbspType :&nbsp </label>
+		<select class="form-control fmCSelect" name="runner_typ2">
+			<option value="" selected disabled>TYPE 2</option>
+			<option value="number 5">5 Number</option>
+			<option value="number 8">8 Number</option>
+			<option value="number 10">10 Number</option>
+      	</select>
+</div><br><hr><br>
+
+<!-- Leather  Leather  Leather  Leather  Leather  Leather  Leather  Leather  Leather  Leather -->
+<label class="control-label"><i class="ii fa fa-" aria-hidden="true"></i>&nbsp Leather Required&nbsp:&nbsp</label><br><br>
+
+	<div class="form-group form-inline">
+	<label class="control-label">&nbsp&nbspType 1:&nbsp</label>
+		<select class="form-control fmCSelect" name="leatherTyp">
+			<option value="" selected disabled>Type 1</option>
+			<option value="Bonded Leather">Bonded Leather</option>
+			<option value="Top Grain Magji 1.4-1.6mm">Top Grain Magji 1.4-1.6mm</option>
+			<option value="Finish Split Grey 1.6-1.8mm">Finish Split Grey 1.6-1.8mm</option>
+			<option value="Suede Finish Oily 1.6-1.8mm ">Suede Finish Oily 1.6-1.8mm </option>
+			<option value="Suede Finish Yellow 1.8-2.0mm ">Suede Finish Yellow 1.8-2.0mm </option>
+			<option value="Beige Suede 1.4-1.6mm">Beige Suede 1.4-1.6mm</option>
+			<option value="Beige Suede 1.6-1.8mm">Beige Suede 1.6-1.8mm</option>
+			<option value="Yellow Suede 1.4-1.6mm">Yellow Suede 1.4-1.6mm</option>
+			<option value="Yellow Suede 1.6-1.8mm">Yellow Suede 1.6-1.8mm</option>
+			<option value="Black Suede 1.4-1.6mm">Black Suede 1.4-1.6mm</option>
+			<option value="V.T Natural 2.4-2.6mm">V.T Natural 2.4-2.6mm</option>
+			<option value="V.T Natural 2.6-2.8mm">V.T Natural 2.6-2.8mm</option>
+			<option value="V.T Black 2.6-2.8mm">V.T Black 2.6-2.8mm</option>
+			<option value="V.T 3.3-3.5 Tan Ches Nut">V.T 3.3-3.5 Tan Ches Nut</option>
+			<option value="Indian V.T Leather">Indian V.T Leather</option>
+			<option value="Dewalt Black Finished Split Leather">Dewalt Black Finished Split Leather</option>
+			<option value="Pure Oily VT Brown CLC 3.3 x 3.5mm">Pure Oily VT Brown CLC 3.3 x 3.5mm</option>
+			<option value="Suspender Indian VT Leather">Suspender Indian VT Leather</option>
+			<option value="Tan(2.8-3.0mm Ches Nut Leather)">Tan(2.8-3.0mm Ches Nut Leather)</option>
+			<option value="Leather Bottom Bucket">Leather Bottom Bucket</option>
+			<option value="Leather Gloves">Leather Gloves</option>
+      	</select>
+		<label class="control-label"> &nbsp &nbsp Size : &nbsp &nbsp</label>
+		<input type="number" min=0 step=any class="form-control fmCTxt" name="leather_q" placeholder="Enetr Quantity">
+		  
+	</div>
+	<div class="form-group form-inline">
+	<label class="control-label">&nbsp&nbspType 2:&nbsp</label>
+		<select class="form-control fmCSelect" name="leatherTyp2">
+			<option value="" selected disabled>Type 2</option>
+			<option value="Bonded Leather">Bonded Leather</option>
+			<option value="Top Grain Magji 1.4-1.6mm">Top Grain Magji 1.4-1.6mm</option>
+			<option value="Finish Split Grey 1.6-1.8mm">Finish Split Grey 1.6-1.8mm</option>
+			<option value="Suede Finish Oily 1.6-1.8mm ">Suede Finish Oily 1.6-1.8mm </option>
+			<option value="Suede Finish Yellow 1.8-2.0mm ">Suede Finish Yellow 1.8-2.0mm </option>
+			<option value="Beige Suede 1.4-1.6mm">Beige Suede 1.4-1.6mm</option>
+			<option value="Beige Suede 1.6-1.8mm">Beige Suede 1.6-1.8mm</option>
+			<option value="Yellow Suede 1.4-1.6mm">Yellow Suede 1.4-1.6mm</option>
+			<option value="Yellow Suede 1.6-1.8mm">Yellow Suede 1.6-1.8mm</option>
+			<option value="Black Suede 1.4-1.6mm">Black Suede 1.4-1.6mm</option>
+			<option value="V.T Natural 2.4-2.6mm">V.T Natural 2.4-2.6mm</option>
+			<option value="V.T Natural 2.6-2.8mm">V.T Natural 2.6-2.8mm</option>
+			<option value="V.T Black 2.6-2.8mm">V.T Black 2.6-2.8mm</option>
+			<option value="V.T 3.3-3.5 Tan Ches Nut">V.T 3.3-3.5 Tan Ches Nut</option>
+			<option value="Indian V.T Leather">Indian V.T Leather</option>
+			<option value="Dewalt Black Finished Split Leather">Dewalt Black Finished Split Leather</option>
+			<option value="Pure Oily VT Brown CLC 3.3 x 3.5mm">Pure Oily VT Brown CLC 3.3 x 3.5mm</option>
+			<option value="Suspender Indian VT Leather">Suspender Indian VT Leather</option>
+			<option value="Tan(2.8-3.0mm Ches Nut Leather)">Tan(2.8-3.0mm Ches Nut Leather)</option>
+			<option value="Leather Bottom Bucket">Leather Bottom Bucket</option>
+			<option value="Leather Gloves">Leather Gloves</option>
+      	</select>
+		<label class="control-label"> &nbsp &nbsp Size : &nbsp &nbsp</label>
+		<input type="number" min=0 step=any class="form-control fmCTxt" name="leather_q2" placeholder="Enetr Quantity">
+		  
+	</div> <br>
+
+
+<!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+
+	<div class="panel-footer panel-secondary">
+	<center><button type="submit" class="btn subBtn btn-primary">&nbsp&nbsp<i class="ii glyphicon glyphicon-ok"></i>&nbsp&nbspAdd Item&nbsp&nbsp</button></center>
+	</div>	
+</form>
+<!-- end of form -->
+		</div> <!-- panel body -->	
+	</div> <!-- panel panel-primary za -->
+		
+	</div>
+</div> <!-- row -->
+</div> <!--container-fluid topSpace -->
+
+ <div class="topSpace"></div>
+<div class="ft" style="border:groove 5px #555 ;background:rgba(51,51,51,0.8) !important;
+    filter: alpha(opacity=30);
+    filter: progid: DXImageTransform.Microsoft.Alpha(opacity=30);
+    -moz-opacity: 0.30;border-top:groove #000 2px;">
+
+    <!-- Footer -->
+    <footer style="padding:1%;">
+      <div class="container">
+        <p class="m-0 text-center text-white">
+          <i class="fa fa-connectdevelop" style="font-size:20px;" aria-hidden="true"> </i>
+        &nbsp&nbspCopyright &copy; Kapoor'z Infotech 2018&nbsp&nbsp
+          <i class="fa fa-connectdevelop" style="font-size:20px;" aria-hidden="true"> </i>
+      </p>
+      </div>
+      <!-- /.container -->
+    </footer>
+</div>
+<div style="background:inherit;width:100%;padding-top:2%;clear: both;"></div>
+</div> <!-- bdy -->
+</body>
+
+</html>

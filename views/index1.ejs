@@ -1,0 +1,92 @@
+      <div class="container" style="overflow:scroll;">
+  <div class="form-group">
+  <% for (var container of containers) { %>
+<% var artNo=container.art_no,count=container.art_no.lenght %>
+    <div class="jumbotron">
+      <div class="h1">Container No.&nbsp&nbsp<%= container.container_no %></div>
+  <div class="pbody">
+    Created on <%= container.date %>&nbsp&nbsp&nbsp At &nbsp<%= container.time %>
+    <div >
+      
+
+<div  style="padding-top:3%;width:50%;margin-left:auto;margin-right:auto;" >
+  <table class="table table-bordered">
+      <thead style="background-color:#333 !important;color:#eee ">
+        <tr>
+          <th class="text-center h2">items included</th>
+        </tr>
+      </thead>
+
+      <tbody>
+    <div class="form-group">
+          <% artNo.forEach(function(element) { %>
+          <tr>
+            <td class="text-center"><%= element %></td>
+          </tr>
+          <% }); %>
+      
+    </div>  
+      </tbody>
+    </table>
+</div>
+
+
+
+    </div>
+  </div> <!-- panel-body -->
+ 
+    </div> <!-- panel-primary -->
+  <% } %> 
+  </div> <!-- form-group -->
+</div>  <!-- container -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"  style="color:#222"> <i class="fa fa-users" aria-hidden="true"></i><%=container.container_no%></h4>
+      </div>
+      <div class="modal-body" style="color:#000;padding:10px;">
+        <form class="form_text" action='#' method='post'>
+              <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" class="form-control" id="date" name="date" placeholder="date">
+              </div>
+              <div class="form-group">
+                <label for="date">Time:</label>
+                <input type="time" class="form-control" id="time" name="time" placeholder="time">
+              </div>
+              <div class="form-group">
+                <label for="art">Articals:</label>              
+              </div>
+              <div class="col-xs-12 text-center">
+              <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+              </div>
+            </form>
+      </div>
+      <div class=" modal-footer">
+      </div>
+    </div>
+<!-- ./modal -->
+  </div>
+</div>
+
+
+

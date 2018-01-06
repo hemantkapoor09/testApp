@@ -1,0 +1,166 @@
+<% include headSub.ejs %>
+<style>
+	thead tr,thead tr:hover{
+		color:#222;
+		background-color:#ccc;
+	}
+	
+	tbody tr{
+		color:#000;
+		background-color:#eee;
+	}
+  a:hover{
+    color: #fff!important;
+  }
+
+.abcth,.abcth:hover{
+  background-color:#444;
+  color: #fff;
+}
+</style>
+  
+<div class="container-fluid" style="overflow:hidden;">
+<div class="topSpace"></div>
+<div class="row">
+<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="margin-left:auto;margin-right: auto;">
+<table class="table table-bordered" style="border:groove 0.65rem #aaa;border-radius:3%;" >
+	<thead class="text-center">
+    	<tr  class="h3" style="background:#222;color:#fff;border-bottom:groove 0.65rem #aaa;border-radius:3%;">
+    		<th>Container Number</th>
+    		<th>Createrd Date</th>
+        <th>Created Time</th>
+    		<th>Arts</th>
+    		<th>Action</th>
+    	</tr>
+	</thead>
+	<tbody class="text-center">
+		<% for (var container of containers) { %>
+			<tr>
+				<td><%= container.container_no %></td>
+				<td><%= container.date %></td>
+        <td><%= container.time %></td>
+				<td><%= container.art %></td>
+				<td>
+					<a href="/container/view"  style="font-size:1.5rem;" class="btn" data-toggle="modal" data-target="#myModal" onclick="getContainer(this);">Watch&nbsp<i class="fa fa-eye" style="font-size: 1.95rem;" aria-hidden="true"></i></a>
+					<i class="fa fa-window-minimize fa-rotate-90" aria-hidden="true"></i>
+				<a href="/container/delete/<%= container._id %>" style="font-size:1.5rem;">Delete&nbsp
+					<i class="fa fa-thumbs-down"  style="font-size: 1.95rem;" aria-hidden="true"></i>
+				</a>
+				</td>
+			</tr>					
+		<% } %>
+	</tbody>
+</table>
+</div>
+</div> <!-- row -->
+<!-- <div class="topSpace"></div> -->
+</div>	<!--  container-fluid -->
+
+<script>
+  function getCart(e){
+  xl=document.getElementById("carts").innerHTML;
+  cut=document.getElementById("cont").innerHTML;
+  // cut="okTested";
+  var frm = document.getElementById('cform') || null;
+  if(frm)
+  {
+    frm.action = '/container/cDetails/'+xl+'/cut/'+cut;
+    frm.submit(); 
+  }
+}
+
+  function getContainer(inp)
+	{ 
+		vl = $(inp).parent('td').prev('td').prev('td').prev('td').prev('td').html();
+		document.getElementById("cnum").value = vl;	
+		
+    zl = $(inp).parent('td').prev('td').prev('td').prev('td').html();
+		document.getElementById("date").value = zl;
+
+		yl = $(inp).parent('td').prev('td').prev('td').html();
+		document.getElementById("time").value = yl;
+
+    xl = $(inp).parent('td').prev('td').html();
+    document.getElementById("carts").innerHTML = xl;
+    document.getElementById("cont").innerHTML = vl;
+
+	}
+	function getID(inp)
+	{
+		// cid = getElementByID('cid');
+		cid = $(inp).prev('p').html();
+		return(cid);
+	}
+
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+
+</script>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog" style="left:0;">
+    
+          <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title"><i class="fa fa-truck" aria-hidden="true">&nbsp</i>Conatiner Details</h1>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+      <div class="modal-body" style="color:#000;font-size:1.5rem;">
+        <form class="form_text" id="cform" action="/container/cDetails/<%= container.art %>" method='post'>
+              <div class="form-group">
+                <label>Conatiner Number:</label>
+                <input type="text" style="font-size: 1.2rem;border:dashed 3px #aaa;border-radius:3%;" class="form-control" disabled="true" id="cnum" name="cnum">
+              </div><hr>
+              <div class="form-group form-inline">
+                <label>Date :&nbsp&nbsp&nbsp</label>
+                <input type="date" class="form-control" style="font-size: 1.2rem;" id="date" disabled="true" name="date" placeholder="date">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <label>Time :&nbsp&nbsp&nbsp</label>
+                <input type="time" class="form-control" disabled="true" id="time" style="font-size: 1.2rem;" name="time" placeholder="time">
+              </div><hr>
+              <div class="form-group">
+
+      <div class="container" style="border:groove 7px #ccc;border-radius:3%;background-color:#ddd;">
+<div  style="padding:5% 0% 5% 0%;margin-left:auto;margin-right:auto;" >
+  <table class="table table-bordered">
+      <thead >
+        <tr class="abcth">
+          <th class="text-center h2"><i class="fa fa-list" aria-hidden="true">&nbsp&nbsp&nbsp</i>Articals In container </th>
+        </tr>
+      </thead>
+
+      <tbody>
+          <tr>
+            <td class="text-center" id="carts"></td>
+            <td hidden="true" class="text-center" id="cont"></td>
+          </tr>
+      </tbody>
+    </table>
+</div><!-- tbl dad -->
+
+  </div> <!-- container-body -->
+ 
+ 
+
+              </div> <!-- formgroup articals -->
+              <div class="col-xs-12 text-center">
+              <button type="button" style="font-size: 1.5rem;color: #fff;" class="btn bg-dark" onclick="getCart(this)">
+                Done
+              </button>
+              </div>
+            </form>
+      </div><!-- modal-body -->      
+
+        <p class="text-center bg-dark text-white" style="padding:2%;clear: both;font-size:1.25rem">
+          <i class="fa fa-connectdevelop" style="font-size:1.5rem!important;" aria-hidden="true"> </i>
+        		&nbsp&nbspCopyright &copy; Kapoor'z 2017&nbsp&nbsp
+          <i class="fa fa-connectdevelop" style="font-size:1.5rem!important;" aria-hidden="true"> </i>
+      	</p>
+
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div> <!-- modal-content -->
+    </div> <!-- modal-dialog -->
+</div> <!-- modal fade -->
+<div class="topSpace"></div>
+
+<% include footerSub.ejs %>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title><%= title%></title>
+    <!-- Bootstrap core CSS -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../packages/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/scrolling-nav.css" rel="stylesheet">
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../js/jquery/jquery.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="../js/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="../js/scrolling-nav.js"></script>
+    <style type="text/css" media="screen">
+    	.bdymn{
+    		background-color:#101010;
+    		/*color:#fff;*/
+    	}
+    </style>
+
+  </head>
+
+  <body id="page-top">
+<div class="bdymn">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top hidden-print" id="mainNav" style="padding-top:.5%;padding-bottom:.6%;border:groove 5px #555 ;background:rgba(51,51,51,0.95) !important;">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="/" style="font-size:20px;">
+            <i class="fa fa-connectdevelop fa-spin" style="font-size:40px;" aria-hidden="true"></i>
+            	&nbspKapoorz App 
+    	</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/artical">Articals</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/container">Container</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#"></a>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+	<div style="clear: both!important;overflow:hidden!important;background:inherit!important;height:200px!important;width:800px;"></div>
+	<div class="container-fluid" style="clear: both;overflow:hidden!important;">
+	<div class="row">
+	<div class="col-lg-7 col-md-7 col-sm-7" style="margin-right:auto;margin-left: auto;">
+<form action="/container/new" method="post">	
+<div class="panel panel-primary">
+<div class="panel-heading hd">
+	<div class="form-group form-inline">
+		<label class="control-label"><i class="glyphicon glyphicon-list-alt">&nbsp</i> Container Number&nbsp:&nbsp&nbsp</label>
+		<input type="text" class="form-control fmCTxt" style="width:26%!important;" name="container_no" placeholder="Enetr Container Number">
+	</div>
+</div>
+	<div class="panel-body za">
+
+
+	<div class="form-group form-inline">
+		<label class="control-label">Date:&nbsp&nbsp</label>
+		<input type="date" class="form-control fmCTxt" id="date" name="date">
+	</div>
+	<div class="form-group form-inline">
+		<label class="control-label">Time:&nbsp&nbsp</label>
+		<input type="time" class="form-control fmCTxt" id="time" name="time" placeholder="time">
+	</div>
+
+<div  style="padding-top:3%;width:40%;margin-left:auto;margin-right:auto;overflow: hidden;" >
+	<table class="table table-bordered">
+			<thead style="background-color:#333 !important;">
+				<tr>
+					<th class="text-center h2 text-white" colspan="2">Select Arts</th>
+				</tr>
+			</thead>
+
+			<tbody>
+		<div class="form-group">
+			
+				<% for (var artical of articals) { %>
+					<tr>
+						<td style="width:15%;">
+							<input type="checkbox" class="checkbox" style="margin-left:15px;" 
+							name="art" value="<%= artical._id %>" onchange='handleChange(this);' />						
+						</td>
+						<td hidden="true">
+							<input type="checkbox" name="art_no" id="<%= artical._id %>"  value="<%= artical.art_no %>" />
+						</td>
+							<td class="text-center"><%= artical.art_no %></td>
+					</tr>
+				<% } %>
+		</div>	
+			</tbody>
+		</table>
+</div>
+	<div class="panel-footer">
+	<center><button type="submit" class="btn btn-primary subBtn"><i class="glyphicon glyphicon-ok"></i>&nbsp&nbspGenrate container&nbsp&nbsp</button></center>
+	</div>
+</div>
+</div><!-- panel-primary close -->
+</form>
+	</div> <!-- col-lg-8 col-md-8 col-sm-8 -->
+	</div> <!-- row -->
+	</div> <!-- container-fluid topSpace -->
+  	<script>
+  	function handleChange(cb) {
+        if(cb.checked == true) {
+        	temp=cb.value;
+    			document.getElementById(temp).checked = true;
+        }if(cb.checked == false) {
+        	temp=cb.value;
+    			document.getElementById(temp).checked = false;
+        }
+    }
+		dte();
+		function getName(inp)
+		{ 
+			vl = $(inp).parent('td').prev('td').prev('td').prev('td').html();
+			document.getElementById("name").value= vl;
+		}
+		
+		function dte(){
+			utc = document.getElementById("date").value=new Date().toJSON().slice(0,10);
+			tm = document.getElementById("time").value = new Date().toTimeString().slice(0,5);
+			// alert(tm,utc);
+		}
+	</script>
+
+   <% include footerSub.ejs %>

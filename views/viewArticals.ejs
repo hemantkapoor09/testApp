@@ -1,0 +1,197 @@
+<% include headSub.ejs %>
+<style>
+	.bdym{
+		background:#fff !important; 
+	}
+	thead tr,thead tr:hover{
+		color:#222;
+		background-color:#ccc;
+	}
+	
+	tbody tr{
+		color:#000;
+		background-color:#eee;
+	}
+  a:hover{
+    color: #fff!important;
+  }
+
+.abcth,.abcth:hover{
+  background-color:#444;
+  color: #fff;
+}
+.panel-body p{
+	font-size: 1.5rem;
+}
+</style>
+  
+<div class="hidden-print" style="clear: both;background:inherit;height:18%;"></div>
+<div class="container-fluid align-content-center" style="overflow:hidden;">
+		<% var count=0; for (var artical of articals) { %>
+			<% if(count==1	)
+			{
+				count=0; %>
+				<br><br>
+				<div style="clear:both;left:0;width:270px;float:left;margin-left:4%;margin-top:20px;">
+			<% }
+			else
+			 { 
+			 	count = count + 1; %>
+				<div style="width:270px;float:left;margin-left:1%;margin-top:20px;">				
+			<% } %>
+				<div class="panel panel-primary" style="border:solid 5px #000;">
+					<div class="panel-heading text-center" style="font-family:'Arial Rounded MT';font-size:2.5rem;font-weight:25px;"><%= artical.art_no %></div>
+					<div class="panel-body">
+						
+						<% if(artical.leather_q > 0 || artical.leather_q2 > 0) { %>
+						<p>	
+						<% if(artical.leather_q > 0) { %>
+							<%= artical.leather_q %> SQ.FT <b>[ <%= artical.leatherTyp %>  ]</b><br>
+						 <% } %>
+						<% if(artical.leather_q2 > 0) { %>
+							<%= artical.leather_q2 %> SQ.FT <b>[  <%= artical.leatherTyp2 %>  ]</b>
+						 <% } %>
+						</p> <hr>
+						<% } %>
+
+						<% if(artical.belt_no > 0 || artical.belt_no2 > 0 || artical.belt_no3 > 0) { %>
+						<p>	
+							<%= artical.belt_no %> &nbsp&nbsp [ &nbsp <%= artical.belt_typ %> &nbsp]<br>
+							<% if(artical.belt_no2 > 0){ %>
+								<%= artical.belt_no2 %> &nbsp&nbsp [ &nbsp <%= artical.belt_typ2 %> &nbsp]<br> 
+							<% } %>
+							<% if(artical.belt_no3 > 0){ %>
+								<%= artical.belt_no3 %> &nbsp&nbsp [ &nbsp <%= artical.belt_typ3 %> &nbsp] 
+							<% } %>
+						</p> <hr>
+						<% } %>
+
+						<% if(artical.th_no > 0){ %>
+						<p>
+							<%= artical.th_no %>&nbsp<%= artical.th_size %>&nbsp<%= artical.th_color %> Tape Holders
+						</p> <hr>
+						<% } %>
+
+						<% if(artical.buckel_no > 0){ %>
+						<p>
+							<%= artical.buckel_no %>&nbsp[&nbsp<%= artical.buckel_typ %>&nbsp<%= artical.buckel_color %> &nbsp] &nbspBuckels
+						</p> <hr>
+						<% } %>
+						
+						<% if(artical.hh_no1 > 0){ %>
+						<p>							
+							<b>Hammer Holder</b><br>
+							[ <%= artical.hh_color %> ] <%= artical.hh_no1 %>&nbsp<%= artical.hh_typ1 %>  
+							<%= artical.hh_no2 %>&nbsp<%= artical.hh_typ2 %>
+						</p> <hr>
+						<% } %>
+												
+						<% if(artical.tich_q > 0){ %>
+						<p>							
+							<%= artical.tich_q %>&nbsp<%= artical.tich_typ %>&nbsp<%= artical.tich_colr %> Tich Button
+						</p> <hr>
+						<% } %>
+					
+						<% if(artical.dh_q > 0){ %>
+						<p>							
+							<%= artical.dh_q %>&nbsp<%= artical.dh_typ %>Dog Hook <br>
+							<% if(artical.dh_pti_q > 0){ %>
+								<%= artical.dh_pti_q %> D-Holder Pati
+							<% } %>
+						</p> <hr>
+						<% } %>
+					
+						<% if(artical.ilet_q > 0){ %>
+						<p>							
+							<%= artical.ilet_q %>&nbsp<%= artical.ilet_typ %>&nbsp<%= artical.ilet_colr %>ILet
+						</p> <hr>
+						<% } %>
+					
+						<% if(artical.wL_q  > 0){ %>
+						<p>							
+							<u><b>Welcro :</b></u><br> <%= artical.wellcro_typ %> &nbsp<%= artical.wellcro_clr %><br><br>[ <%= artical.wL_q %>" Loop ] &  &nbsp[ <%= artical.wH_q %>" Hook ]
+						</p> <hr>
+						<% } %>
+
+						<% if(artical.tchain_q > 0){ %>
+						<p>							
+							<%= artical.tchain_q %>&nbsp<%= artical.tchain_typ %>&nbsp<%= artical.tchain_colr %> T-Chain
+						</p> <hr>
+						<% } %>
+												
+						<% if(artical.jhook_q > 0){ %>
+						<p>							
+							<%= artical.jhook_q %>&nbsp<%= artical.jhook_colr %> J-Hooks
+						</p> <hr>
+						<% } %>
+						
+						<% if(artical.washer_no > 0){ %>
+						<p>							
+							<%= artical.washer_no %>&nbsp<%= artical.washer_color %> Washers
+						</p> <hr>
+						<% } %>
+						
+						<% if(artical.cap_no > 0){ %>
+						<p>							
+							<%= artical.cap_no %>&nbsp<%= artical.cap_color %> Imrorted Caps
+						</p> <hr>
+						<% } %>
+												
+						<% if(artical.green_q > 0){ %>
+						<p>							
+							<%= artical.green_q %>&nbsp<%= artical.green_typ %> Green liner
+						</p> <hr>
+						<% } %>
+						
+						<p>
+							<%= artical.rivtTyp %>&nbspRivets&nbsp<%= artical.rivet_color%>&nbspcolor&nbsp : <br>
+<% if(artical.rivet_q1 > 0){ %><%= artical.rivet_q1 %>&nbsp Of&nbsp<%= artical.rivtSize1 %>&nbsp mm <br> <% } %>
+<% if(artical.rivet_q2 > 0){ %><%= artical.rivet_q2 %>&nbsp Of&nbsp<%= artical.rivtSize2 %>&nbsp mm <br> <% } %>
+<% if(artical.rivet_q3 > 0){ %><%= artical.rivet_q3 %>&nbsp Of&nbsp<%= artical.rivtSize3 %>&nbsp mm <br> <% } %>
+<% if(artical.rivet_q4 > 0){ %><%= artical.rivet_q4 %>&nbsp Of&nbsp<%= artical.rivtSize4 %>&nbsp mm <br> <% } %>
+						</p><hr>						
+						
+				<% if(artical.antstud_no > 0){ %>
+						<p>							
+						 	<%= artical.antstud_no %>&nbsp Antique Studs %>
+						</p> <hr><% } %>
+				<% if(artical.frame_no > 0){ %>
+						<p>							
+							<%= artical.frame_no %>&nbsp Frames 20" %>
+						</p> <hr><% } %>
+				<% if(artical.pipe_no > 0){ %>
+						<p>							
+							<%= artical.pipe_no %>&nbsp Pipes 4.5" %>
+						</p> <hr><% } %>
+
+						<% if(artical.zip_no1 > 0 || artical.zip_no2 > 0) { %>
+						<p>	<b>Zip</b><br>
+							<% if(artical.zip_no1 > 0){ %>
+								<%= artical.zip_no1 %> "&nbsp [<%= artical.zip_color %> &nbsp <%= artical.zip_typ1 %> &nbsp]<br> 
+							<% } %>
+							<% if(artical.zip_no2 > 0){ %>
+								<%= artical.zip_no2 %> "&nbsp [<%= artical.zip_color %> &nbsp <%= artical.zip_typ2 %> &nbsp] 
+							<% } %>
+						</p> <hr>
+						<% } %>
+						
+						<% if(artical.runner_no1 > 0 || artical.runner_no2 > 0) { %>
+						<p>	<b>Runner</b><br>
+							<% if(artical.runner_no1 > 0){ %>
+								<%= artical.runner_no1 %> &nbsp [<%= artical.runner_color %> &nbsp <%= artical.runner_typ1 %> &nbsp]<br> 
+							<% } %>
+							<% if(artical.runner_no2 > 0){ %>
+								<%= artical.runner_no2 %> &nbsp [<%= artical.runner_color %> &nbsp <%= artical.runner_typ2 %> &nbsp] 
+							<% } %>
+						</p> <hr>
+						<% } %>
+
+					</div>
+
+				</div>	
+			</div>
+		<% } %>
+
+</div>	<!--  container-fluid -->
+
+<% include footerSub.ejs %>
